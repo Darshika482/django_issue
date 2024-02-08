@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Dashboard</title>
+    {% load static %}
+    <link
+      rel="shortcut icon"
+      href="{% static 'dashboard/images/favicon.svg' %}"
+      type="image/svg+xml"
+    />
+    <link rel="stylesheet" href="{% static 'dashboard/css/style.css' %}" />
+    <!-- Font Awesome Cdn Link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <div class="container">
+      <nav>
+        <ul>
+          <li>
+            <div class="logo">
+              <img src="{% static 'dashboard/images/logo.svg' %}" alt="" />
+              <span class="nav-item">Dashboard</span>
+            </div>
+          </li>
+          <li>
+            <a href="{% url 'homee' %}">
+              <i class="fas fa-home"></i>
+              <span class="nav-item">Booking</span>
+            </a>
+          </li>
+          <li>
+            <a href="{% url 'gallery' %}" class="active">
+              <i class="fas fa-user"></i>
+              <span class="nav-item">Gallery</span>
+            </a>
+          </li>
+          <li>
+            <a href="{% url 'event' %}">
+              <i class="fas fa-user"></i>
+              <span class="nav-item">Events</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <div style="width: 250px"></div>
+
+      <section class="gallery">
+        <h1 class="heading">Gallery</h1>
+
+        <table class="gallery-table">
+          <tr>
+            <th>S No.</th>
+            <th>Photo</th>
+            <th>Action</th>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>
+              <div class="img-area">
+                <!-- <img src="" alt="" /> -->
+                <input
+                  type="file"
+                  id="file-1"
+                  class="imgInput"
+                  accept="image/*"
+                />
+                <label for="file-1">Upload Image </label>
+              </div>
+            </td>
+            <td>
+              <div class="action-btn">
+                <button>Update</button>
+                <button>Delete</button>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>
+              <div class="img-area">
+                <!-- <img src="" alt="" /> -->
+                <input
+                  type="file"
+                  id="file-2"
+                  class="imgInput"
+                  accept="image/"
+                />
+                <label for="file-2">Upload Image </label>
+              </div>
+            </td>
+            <td>
+              <div class="action-btn">
+                <button>Update</button>
+                <button>Delete</button>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>
+              <div class="img-area">
+                <!-- <img src="" alt="" /> -->
+                <input
+                  type="file"
+                  id="file-3"
+                  class="imgInput"
+                  accept="image/"
+                />
+                <label for="file-3">Upload Image </label>
+              </div>
+            </td>
+            <td>
+              <div class="action-btn">
+                <button>Update</button>
+                <button>Delete</button>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>
+              <div class="img-area">
+                <!-- <img src="" alt="" /> -->
+                <input
+                  type="file"
+                  id="file-4"
+                  class="imgInput"
+                  accept="image/"
+                />
+                <label for="file-4">Upload Image </label>
+              </div>
+            </td>
+            <td>
+              <div class="action-btn">
+                <button>Update</button>
+                <button>Delete</button>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>
+              <div class="img-area">
+                <!-- <img src="" alt="" /> -->
+                <input
+                  type="file"
+                  id="file-5"
+                  class="imgInput"
+                  accept="image/"
+                />
+                <label for="file-5">Upload Image </label>
+              </div>
+            </td>
+            <td>
+              <div class="action-btn">
+                <button>Update</button>
+                <button>Delete</button>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </section>
+    </div>
+    <script src="{% static 'dashboard/js/imgUpload.js' %}"></script>
+  </body>
+</html>
