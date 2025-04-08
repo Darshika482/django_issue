@@ -1,0 +1,158 @@
+/* Utility Classes - Reusable styles that can be applied to any component */
+
+/* Layout Utilities */
+.flex-center {
+  @apply flex items-center justify-center;
+}
+
+.flex-between {
+  @apply flex items-center justify-between;
+}
+
+.flex-start {
+  @apply flex items-center justify-start;
+}
+
+.flex-end {
+  @apply flex items-center justify-end;
+}
+
+.flex-col-center {
+  @apply flex flex-col items-center justify-center;
+}
+
+/* Spacing Utilities */
+.spacing-y-sm > * + * {
+  @apply mt-2;
+}
+
+.spacing-y-md > * + * {
+  @apply mt-4;
+}
+
+.spacing-y-lg > * + * {
+  @apply mt-6;
+}
+
+.spacing-x-sm > * + * {
+  @apply ml-2;
+}
+
+.spacing-x-md > * + * {
+  @apply ml-4;
+}
+
+.spacing-x-lg > * + * {
+  @apply ml-6;
+}
+
+/* Card Styles */
+.card-base {
+  @apply bg-white rounded-lg border border-border shadow-sm transition-all duration-300;
+}
+
+.card-hover {
+  @apply hover:shadow-md hover:translate-y-[-2px] transition-all duration-300;
+}
+
+.card-header {
+  @apply p-4 border-b border-border;
+}
+
+.card-content {
+  @apply p-4;
+}
+
+.card-footer {
+  @apply p-4 border-t border-border;
+}
+
+/* Button Variants */
+.btn-primary {
+  @apply bg-primary text-white hover:bg-primary/90 transition-colors rounded-md px-4 py-2;
+}
+
+.btn-secondary {
+  @apply bg-gray-100 text-gray-800 hover:bg-gray-200 transition-colors rounded-md px-4 py-2;
+}
+
+.btn-outline {
+  @apply border border-gray-300 text-gray-700 hover:bg-gray-50 transition-colors rounded-md px-4 py-2;
+}
+
+/* Text Utilities */
+.text-truncate {
+  @apply overflow-hidden text-ellipsis whitespace-nowrap;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+/* Status Indicators */
+.status-active {
+  @apply bg-green-100 text-green-800 px-2 py-0.5 rounded-full text-xs font-medium;
+}
+
+.status-pending {
+  @apply bg-yellow-100 text-yellow-800 px-2 py-0.5 rounded-full text-xs font-medium;
+}
+
+.status-inactive {
+  @apply bg-gray-100 text-gray-800 px-2 py-0.5 rounded-full text-xs font-medium;
+}
+
+/* Standard Transitions */
+.transition-standard {
+  @apply transition-all duration-300 ease-in-out;
+}
+
+/* Simple Animations */
+.animate-fade-in {
+  animation: simpleFadeIn 0.3s ease-out forwards;
+}
+
+@keyframes simpleFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-slide-up {
+  animation: simpleSlideUp 0.3s ease-out forwards;
+}
+
+@keyframes simpleSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Proper scrollbar styles */
+.dialog-scrollable {
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+/* Fix z-index stacking for dropdowns and dialogs */
+.dropdown-z-higher {
+  z-index: 100 !important;
+}
+
+.dialog-z-highest {
+  z-index: 150 !important;  
+}
+
+/* Ensure strikethrough is consistent */
+.task-completed {
+  text-decoration: line-through;
+  color: #9ca3af; /* text-gray-400 */
+}

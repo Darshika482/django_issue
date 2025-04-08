@@ -1,0 +1,67 @@
+
+/* Calendar Core Styles */
+.calendar-cell {
+  @apply border border-border relative min-h-[100px] 
+         transition-colors hover:bg-secondary/50;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.calendar-cell.today {
+  @apply bg-primary/5;
+}
+
+.calendar-cell.different-month {
+  @apply bg-muted/30 text-muted-foreground;
+}
+
+.time-slot {
+  @apply border-b border-border py-3 relative min-h-[60px] 
+         transition-colors hover:bg-secondary/50;
+}
+
+/* Calendar cell drop target */
+.calendar-cell.drop-target {
+  @apply bg-primary/10 border-2 border-dashed border-primary;
+}
+
+.time-slot.drop-target {
+  @apply bg-primary/10 border-2 border-dashed border-primary;
+}
+
+/* Month View Styles */
+.month-view-grid {
+  @apply grid grid-cols-7 flex-grow;
+  overflow: hidden;
+}
+
+.month-view-cell-content {
+  @apply overflow-y-auto;
+  max-height: 100%;
+}
+
+.month-cell-task-container {
+  max-height: calc(100% - 25px);
+  overflow-y: auto;
+}
+
+/* Day View Specific Styles */
+.day-view-container {
+  @apply p-4 min-w-[800px];
+  overflow-x: auto;
+}
+
+.day-view-header {
+  @apply flex justify-between items-center mb-4 sticky top-0 bg-background z-30 pt-2 pb-3;
+}
+
+.day-view-time-slots {
+  @apply space-y-px pb-16;
+}
+
+/* Time Indicator */
+.time-indicator {
+  font-size: 0.75rem;
+  color: #6b7280;
+  margin-left: 1.75rem;
+}

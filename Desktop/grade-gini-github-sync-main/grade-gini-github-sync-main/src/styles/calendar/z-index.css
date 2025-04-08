@@ -1,0 +1,27 @@
+
+/* Z-index layers */
+.calendar-layer { z-index: 10; }
+.task-card-layer { z-index: 20; }
+.dropdown-layer { z-index: 50; }
+.modal-layer { z-index: 100; }
+.toast-layer { z-index: 150; }
+
+/* Override Tailwind/shadcn styles for our z-index system */
+.dialog-modal {
+  z-index: var(--modal-z-index, 100) !important;
+}
+
+/* Ensure dropdowns appear above other content */
+[data-radix-popper-content-wrapper] {
+  z-index: var(--dropdown-z-index, 50) !important;
+}
+
+/* Task selection dialog should be above all other elements */
+.task-selection-dialog {
+  z-index: var(--modal-z-index, 100) !important;
+}
+
+/* Toast notifications should be the highest layer */
+[data-sonner-toaster] {
+  z-index: var(--toast-z-index, 150) !important;
+}

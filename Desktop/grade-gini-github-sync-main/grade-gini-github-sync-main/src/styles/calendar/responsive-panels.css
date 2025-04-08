@@ -1,0 +1,41 @@
+
+/* Resizable panel handle customization */
+[data-panel-group-direction="horizontal"] > [data-resize-handle] {
+  width: 5px !important;
+  background-color: #e2e8f0;
+  transition: background-color 0.2s ease, width 0.2s ease;
+  cursor: col-resize;
+  position: relative;
+  z-index: 20;
+}
+
+[data-panel-group-direction="horizontal"] > [data-resize-handle]:hover,
+[data-panel-group-direction="horizontal"] > [data-resize-handle]:active {
+  background-color: #9b87f5 !important; /* Primary purple */
+  width: 6px !important;
+}
+
+/* Custom handle icon styling */
+[data-panel-group-direction="horizontal"] [data-resize-handle] [data-panel-handle] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 24px;
+  width: 24px;
+  background-color: #f3f4f6;
+  border-radius: 4px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  z-index: 10;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: background-color 0.2s ease;
+  cursor: col-resize;
+}
+
+[data-panel-group-direction="horizontal"] [data-resize-handle]:hover [data-panel-handle] {
+  background-color: #f9fafb;
+  border-color: #9b87f5;
+}

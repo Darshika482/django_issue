@@ -1,0 +1,73 @@
+
+/* Import all calendar style modules */
+@import './calendar-grid.css';
+@import './task-cards.css';
+@import './responsive-panels.css';
+@import './z-index.css';
+@import './drag-drop.css';
+
+/* Additional dialog containment fixes */
+.task-form-dialog {
+  isolation: isolate;
+  contain: layout;
+  position: relative;
+  z-index: 3000 !important; /* Increased from 200 to 3000 */
+}
+
+.task-form-dialog [data-state=open][role="dialog"] {
+  max-height: 90vh !important;
+  overflow-y: auto !important;
+  max-width: 500px !important;
+  overflow: hidden !important;
+}
+
+/* Ensure dialogs don't leak outside their containers */
+[role="dialog"] {
+  contain: layout;
+  isolation: isolate;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+/* Improve dialog overlay styling */
+.DialogOverlay {
+  background-color: rgba(0, 0, 0, 0.5) !important;
+  position: fixed !important;
+  inset: 0 !important;
+  animation: fadeIn 0.2s ease-out !important;
+}
+
+/* Ensure the dialog properly floats on top */
+[data-state=open][role="dialog"] {
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04) !important;
+  animation: scaleIn 0.2s ease-out !important;
+}
+
+/* Apply scrollbar styling to all dialogs */
+[role="dialog"]::-webkit-scrollbar {
+  width: 6px;
+}
+
+[role="dialog"]::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+[role="dialog"]::-webkit-scrollbar-thumb {
+  background: #8000ff;
+  border-radius: 4px;
+}
+
+[role="dialog"]::-webkit-scrollbar-thumb:hover {
+  background: #7000ee;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}

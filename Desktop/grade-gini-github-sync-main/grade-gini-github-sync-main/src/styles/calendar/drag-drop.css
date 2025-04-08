@@ -1,0 +1,14 @@
+
+/* Drag and Drop States */
+.drop-target {
+  @apply bg-primary/10 border-2 border-dashed border-primary;
+}
+
+/* Selected Day Styling */
+.rdp-day_selected:not([disabled]),
+.rdp-day_selected:focus:not([disabled]),
+.rdp-day_selected:active:not([disabled]),
+.rdp-day_selected:hover:not([disabled]) {
+  background-color: rgba(132, 4, 252, 0.8);
+  color: white;
+}

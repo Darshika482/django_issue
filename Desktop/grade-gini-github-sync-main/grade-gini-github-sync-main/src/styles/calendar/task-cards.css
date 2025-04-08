@@ -1,0 +1,113 @@
+
+/* Task Card Styles */
+.task-card {
+  @apply bg-white rounded-md p-3 shadow-sm border border-border 
+         cursor-grab active:cursor-grabbing transition-all 
+         hover:shadow-md hover:border-primary/30;
+  width: 100%;
+  max-width: 100%;
+  word-break: break-word;
+  overflow: visible;
+  box-sizing: border-box;
+}
+
+.task-card .task-title {
+  @apply font-bold text-[#1A1F2C];
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;  /* Allow wrapping */
+  word-break: break-word;
+  width: 100%;
+}
+
+.task-card.dragging {
+  @apply opacity-70 shadow-md scale-105;
+}
+
+/* Calendar day task specific styles */
+.calendar-day-task .card {
+  overflow: visible !important;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.calendar-day-task h3 {
+  word-break: break-word !important;
+  white-space: normal !important;
+  overflow: visible !important;
+  text-overflow: clip !important;
+  width: 100%;
+}
+
+/* Calendar task title emphasis */
+.calendar-cell .task-title,
+.time-slot .task-title {
+  font-weight: 700;
+  color: #1A1F2C;
+  word-break: break-word;
+  white-space: normal;
+  overflow: visible;
+  width: 100%;
+}
+
+/* Completed task styles */
+.calendar-cell .completed-task .task-title,
+.time-slot .completed-task .task-title,
+.task-card.completed .task-title {
+  text-decoration: line-through !important;
+  opacity: 0.7;
+  color: #6B7280;
+}
+
+/* Task Categories */
+.task-category-work {
+  border-left: 4px solid #4338ca;
+}
+
+.task-category-personal {
+  border-left: 4px solid #16a34a;
+}
+
+.task-category-study {
+  border-left: 4px solid #ea580c;
+}
+
+.task-category-health {
+  border-left: 4px solid #dc2626;
+}
+
+.task-category-other {
+  border-left: 4px solid #8b5cf6;
+}
+
+/* Task Sidebar */
+.task-sidebar-item {
+  @apply transition-all cursor-grab active:cursor-grabbing;
+}
+
+.task-sidebar-item.dragging {
+  @apply opacity-70 shadow-md scale-105;
+}
+
+.task-date-section {
+  @apply border-2 border-transparent transition-colors;
+}
+
+.task-date-section.drop-target {
+  @apply border-2 border-dashed border-primary bg-primary/5 rounded-md;
+}
+
+/* Task edit button */
+.task-sidebar-item .task-edit-button {
+  @apply absolute top-1 right-1 opacity-0 transition-opacity;
+}
+
+.task-sidebar-item:hover .task-edit-button {
+  @apply opacity-100;
+}
+
+/* Resize handle styles */
+.resize-handle {
+  @apply absolute bottom-0 left-0 right-0 h-2 bg-primary/30 
+         cursor-ns-resize rounded-b hover:bg-primary/50;
+}
